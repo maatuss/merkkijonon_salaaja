@@ -13,9 +13,9 @@ import java.util.Random;
  */
 public class Salaaja {
 
-    Map<Character, Character> salatutkirjaimet;
-    Map<Character, Character> puretutkirjaimet;
-    List<Character> kirjaimet;
+    private Map<Character, Character> salatutkirjaimet;
+    private Map<Character, Character> puretutkirjaimet;
+    private List<Character> kirjaimet;
 
     public Salaaja() {
         this.salatutkirjaimet = new HashMap<>();
@@ -126,12 +126,6 @@ public class Salaaja {
                 .forEach(k -> {
                     System.out.println(k.getKey() + " = " + k.getValue());
                 });
-    }
-
-    private void vaihdaArvoa(Map<Character, Character> salatutkirjaimet, Character avain) {
-        while (salatutkirjaimet.get(avain).equals(avain)) {
-            salatutkirjaimet.put(avain, kirjaimet.get(new Random().nextInt(kirjaimet.size())));
-        }
     }
 
 }
