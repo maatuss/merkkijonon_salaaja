@@ -58,6 +58,7 @@ public class Salaaja {
         //lisätään käännökset, avaimeksi space ... z ja arvoksi random-kirjain kirjaimet-listasta
         //toistetaan niin kauan että ollaan merkissä 'z'
         //tarkistetaan ettei samaa arvoa ole jo lisätty
+        //esim a = x
         char c = ' ';
         while (c <= 'z') {
             char randomkirjain = this.kirjaimet.get(new Random().nextInt(this.kirjaimet.size()));
@@ -68,7 +69,7 @@ public class Salaaja {
         }
 
         //lisätään käännökset myös toisinpäin toiseen hajautustauluun
-        //esim b = a
+        //esim x = a
         salatutkirjaimet.entrySet().stream()
                 .forEach(k -> puretutkirjaimet.put(k.getValue(), k.getKey()));
 
