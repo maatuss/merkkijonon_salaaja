@@ -1,7 +1,6 @@
 package com.maatus.merkkijonon_salaaja;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +20,8 @@ public class Salaaja {
         this.salatutkirjaimet = new HashMap<>();
         this.puretutkirjaimet = new HashMap<>();
 
+        this.kirjaimet = new ArrayList<>();
+
         lisaaKirjaimet();
     }
 
@@ -29,7 +30,6 @@ public class Salaaja {
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattukirjain = merkkijono.charAt(i);
-            // purettu += puretutkirjaimet.get(salattukirjain);
             sb.append(puretutkirjaimet.get(salattukirjain));
         }
         return sb.toString();
@@ -40,7 +40,6 @@ public class Salaaja {
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattavaKirjain = merkkijono.charAt(i);
-
             sb.append(salatutkirjaimet.get(salattavaKirjain));
         }
 
@@ -48,10 +47,7 @@ public class Salaaja {
     }
 
     private void lisaaKirjaimet() {
-        char aakkonen;
         char kirjain;
-
-        kirjaimet = new ArrayList<>();
 
         //lisätään kirjaimia
         //aloitetaan tyhjästä (space)
@@ -59,7 +55,7 @@ public class Salaaja {
             kirjaimet.add(kirjain);
         }
 
-        //lisätään käännökset, avaimeksi a ... z ja arvoksi random-kirjain kirjaimet-listasta
+        //lisätään käännökset, avaimeksi space ... z ja arvoksi random-kirjain kirjaimet-listasta
         //toistetaan niin kauan että ollaan merkissä 'z'
         //tarkistetaan ettei samaa arvoa ole jo lisätty
         char c = ' ';
