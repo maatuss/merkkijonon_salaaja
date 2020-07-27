@@ -1,8 +1,8 @@
 # Merkkijonon salaaja
-Salaa / purkaa annetun merkkijonon (kirjaimet väliltä a-z)
+Salaa annetun merkkijono, korvattavia merkkejä väliltä space ... z
 
 Esimerkkitulostus
 
->Sana: merkkijono  
->Salattu: drwuuzpaba  
->Purettu: merkkijono  
+>Sana: 123 merkkijonon salaaja 456  
+>Salattu: tf^iuE`BBra.[.[i]!*!!a!iJ,\  
+>Purettu: 123 merkkijonon salaaja 456  
