@@ -22,7 +22,7 @@ public class Salaaja {
 
         this.kirjaimet = new ArrayList<>();
 
-        lisaaKirjaimet();
+        alusta();
     }
 
     public String pura(String merkkijono) {
@@ -46,7 +46,7 @@ public class Salaaja {
         return sb.toString();
     }
 
-    private void lisaaKirjaimet() {
+    private void alusta() {
         char kirjain;
 
         //lisätään kirjaimia
