@@ -30,7 +30,7 @@ public class Salaaja {
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattukirjain = merkkijono.charAt(i);
-            sb.append(puretutkirjaimet.get(salattukirjain));
+            sb.append(this.puretutkirjaimet.get(salattukirjain));
         }
         return sb.toString();
     }
@@ -40,7 +40,7 @@ public class Salaaja {
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattavaKirjain = merkkijono.charAt(i);
-            sb.append(salatutkirjaimet.get(salattavaKirjain));
+            sb.append(this.salatutkirjaimet.get(salattavaKirjain));
         }
 
         return sb.toString();
@@ -61,22 +61,22 @@ public class Salaaja {
         //esim a = x
         char c = ' ';
         while (c <= 'z') {
-            char randomkirjain = this.kirjaimet.get(new Random().nextInt(this.kirjaimet.size()));
-            if (!salatutkirjaimet.containsValue(randomkirjain)) {
-                salatutkirjaimet.put(c, randomkirjain);
+            char random = this.kirjaimet.get(new Random().nextInt(this.kirjaimet.size()));
+            if (!this.salatutkirjaimet.containsValue(random)) {
+                this.salatutkirjaimet.put(c, random);
                 c++;
             }
         }
 
         //lisätään käännökset myös toisinpäin toiseen hajautustauluun
         //esim x = a
-        salatutkirjaimet.entrySet().stream()
+        this.salatutkirjaimet.entrySet().stream()
                 .forEach(k -> puretutkirjaimet.put(k.getValue(), k.getKey()));
 
     }
 
     public void tulostaKaannokset() {
-        salatutkirjaimet.entrySet().stream()
+        this.salatutkirjaimet.entrySet().stream()
                 .forEach(k -> {
                     System.out.println(k.getKey() + " = " + k.getValue());
                 });
