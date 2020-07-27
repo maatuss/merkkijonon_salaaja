@@ -10,8 +10,7 @@ public class Paaohjelma {
 
         Salaaja salaaja = new Salaaja();
 
-        // sallitut merkit väliltä a-z
-        String merkkijono = "merkkijono";
+        String merkkijono = "123 merkkijonon salaaja 456";
 
         long aloitus = System.nanoTime();
         System.out.println("Sana: " + merkkijono);

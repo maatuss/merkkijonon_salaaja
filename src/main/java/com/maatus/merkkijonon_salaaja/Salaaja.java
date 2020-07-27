@@ -13,8 +13,8 @@ import java.util.Random;
  */
 public class Salaaja {
 
-    private Map<Character, Character> salatutkirjaimet;
-    private Map<Character, Character> puretutkirjaimet;
+    private final Map<Character, Character> salatutkirjaimet;
+    private final Map<Character, Character> puretutkirjaimet;
     private List<Character> kirjaimet;
 
     public Salaaja() {
@@ -54,71 +54,28 @@ public class Salaaja {
         kirjaimet = new ArrayList<>();
 
         //lisätään kirjaimia
-        for (kirjain = 'a'; kirjain <= 'z'; kirjain++) {
+        //aloitetaan tyhjästä (space)
+        for (kirjain = ' '; kirjain <= 'z'; kirjain++) {
             kirjaimet.add(kirjain);
         }
 
-        //sekoitetaan kirjaimien järjestys
-        Collections.shuffle(kirjaimet);
-
-        //käydään läpi sekoitettu kirjain -lista
-        //lisätään hajautustauluun avain väliltä a-z ja sille arvo kirjain -listasta
-        //esim a = b
-        char c = 'a';
-        for (int i = 0; i <= kirjaimet.size() - 1; i++) {
-
-            salatutkirjaimet.put(c, kirjaimet.get(i));
-            if (c == 'z') {
-                break;
+        //lisätään käännökset, avaimeksi a ... z ja arvoksi random-kirjain kirjaimet-listasta
+        //toistetaan niin kauan että ollaan merkissä 'z'
+        //tarkistetaan ettei samaa arvoa ole jo lisätty
+        char c = ' ';
+        while (c <= 'z') {
+            char randomkirjain = this.kirjaimet.get(new Random().nextInt(this.kirjaimet.size()));
+            if (!salatutkirjaimet.containsValue(randomkirjain)) {
+                salatutkirjaimet.put(c, randomkirjain);
+                c++;
             }
-            c++;
-
         }
-
-        //tarkistetaan vielä että avain ei ole sama kuin arvo, vaihdetaan tarvittaessa
-        //esim a = a
-        tarkistaJaVaihdaSamat(salatutkirjaimet);
 
         //lisätään käännökset myös toisinpäin toiseen hajautustauluun
         //esim b = a
         salatutkirjaimet.entrySet().stream()
                 .forEach(k -> puretutkirjaimet.put(k.getValue(), k.getKey()));
 
-    }
-
-    public void tarkistaJaVaihdaSamat(Map<Character, Character> kirjaimet) {
-
-        while (onkoSamoja(kirjaimet)) {
-
-            List<Character> avaimet = new ArrayList<>();
-            List<Character> arvot = new ArrayList<>();
-
-            avaimet.addAll(kirjaimet.keySet());
-            arvot.addAll(kirjaimet.values());
-
-            for (int i = 0; i <= kirjaimet.size() - 1; i++) {
-                if (avaimet.get(i).equals(arvot.get(i))) {
-                    kirjaimet.put(avaimet.get(i), this.kirjaimet.get(new Random().nextInt(this.kirjaimet.size())));
-                }
-            }
-        }
-
-    }
-
-    public boolean onkoSamoja(Map<Character, Character> kirjaimet) {
-        List<Character> avaimet = new ArrayList<>();
-        List<Character> arvot = new ArrayList<>();
-
-        avaimet.addAll(kirjaimet.keySet());
-        arvot.addAll(kirjaimet.values());
-        boolean loytyykoSamoja = true;
-
-        for (int i = 0; i <= kirjaimet.size() - 1; i++) {
-            if (!avaimet.get(i).equals(arvot.get(i))) {
-                loytyykoSamoja = false;
-            }
-        }
-        return loytyykoSamoja;
     }
 
     public void tulostaKaannokset() {
