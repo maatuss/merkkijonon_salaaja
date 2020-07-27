@@ -14,7 +14,7 @@ public class Salaaja {
 
     private final Map<Character, Character> salatutkirjaimet;
     private final Map<Character, Character> puretutkirjaimet;
-    private List<Character> kirjaimet;
+    private final List<Character> kirjaimet;
 
     public Salaaja() {
         this.salatutkirjaimet = new HashMap<>();
