@@ -1,10 +1,8 @@
 # Merkkijonon salaaja
-Salaa annetun merkkijono, korvattavia kirjaimia väliltä (a ... z)
+Salaa annetun merkkijono, korvattavia merkkejä väliltä (space ... z)
 
 Esimerkkitulostus
 
->Sana: merkkijonon salaaja  
->Salattu: lvikkszftft yqaqqzq  
->Purettu: merkkijonon salaaja  
-
-
+>Sana: 123 merkkijonon salaaja 456  
+>Salattu: tf^iuE`BBra.[.[i]!*!!a!iJ,\  
+>Purettu: 123 merkkijonon salaaja 456  
