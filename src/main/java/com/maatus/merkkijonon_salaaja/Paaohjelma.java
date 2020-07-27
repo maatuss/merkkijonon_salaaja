@@ -22,6 +22,8 @@ public class Paaohjelma {
         long kesto = lopetus - aloitus;
 
         System.out.println("Aikaa meni: " + (kesto / 1000000) + " ms.");
+        
+        salaaja.tulostaKaannokset();
 
     }
 

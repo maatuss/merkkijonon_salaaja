@@ -76,6 +76,7 @@ public class Salaaja {
     }
 
     public void tulostaKaannokset() {
+        System.out.println("\nKäännökset\n");
         this.salatutkirjaimet.entrySet().stream()
                 .forEach(k -> {
                     System.out.println(k.getKey() + " = " + k.getValue());
