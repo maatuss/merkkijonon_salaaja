@@ -1,5 +1,5 @@
 # Merkkijonon salaaja
-Salaa annetun merkkijono, korvattavia merkkejä väliltä (space ... z)
+Salaa annetun merkkijono, korvattavia merkkejä väliltä space ... z
 
 Esimerkkitulostus
 
