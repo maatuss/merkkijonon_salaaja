@@ -15,18 +15,18 @@ public class Salaaja {
     private final Map<Character, Character> salatutkirjaimet;
     private final Map<Character, Character> puretutkirjaimet;
     private final List<Character> kirjaimet;
+    private final StringBuilder sb;
 
     public Salaaja() {
         this.salatutkirjaimet = new HashMap<>();
         this.puretutkirjaimet = new HashMap<>();
-
         this.kirjaimet = new ArrayList<>();
+        this.sb = new StringBuilder();
 
         alusta();
     }
 
     public String pura(String merkkijono) {
-        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattukirjain = merkkijono.charAt(i);
@@ -36,7 +36,6 @@ public class Salaaja {
     }
 
     public String salaa(String merkkijono) {
-        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i <= merkkijono.length() - 1; i++) {
             char salattavaKirjain = merkkijono.charAt(i);
