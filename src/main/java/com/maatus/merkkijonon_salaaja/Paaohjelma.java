@@ -17,13 +17,11 @@ public class Paaohjelma {
         long aloitus = System.nanoTime();
         System.out.println("Sana: " + merkkijono);
         System.out.println("Salattu: " + salattu);
-        System.out.println("Purettu: " + purettu);
-        System.out.println("");
 
         long lopetus = System.nanoTime();
         long kesto = lopetus - aloitus;
 
-        System.out.println("Aikaa meni: " + (kesto / 1000000) + " ms.");
+        System.out.println("\nAikaa meni: " + (kesto / 1000000) + " ms.");
 
         ///salaaja.tulostaKaannokset();
     }
