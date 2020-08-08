@@ -23,7 +23,7 @@ public class Paaohjelma {
 
         System.out.println("\nAikaa meni: " + (kesto / 1000000) + " ms.");
 
-        ///salaaja.tulostaKaannokset();
+        //salaaja.tulostaKaannokset();
     }
 
 }
