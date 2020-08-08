@@ -14,7 +14,7 @@ public class Paaohjelma {
         String salattu = salaaja.salaa(merkkijono);
         String purettu = salaaja.pura(salattu);
 
-        System.out.println("Sana: " + merkkijono);
+        System.out.println("Merkkijono: " + merkkijono);
         System.out.println("Salattu: " + salattu);
         System.out.println("Purettu: " + purettu);
 
